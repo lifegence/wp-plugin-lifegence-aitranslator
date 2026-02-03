@@ -82,8 +82,8 @@ English • 日本語 • 简体中文 • 繁體中文 • 한국어 • Españ
 
 | Provider | Without Cache | With Cache | Savings |
 |----------|--------------|------------|---------|
-| **Gemini 1.5 Flash** | ~$10/month | ~$1/month | 90% |
-| **OpenAI GPT-4o Mini** | ~$20/month | ~$2/month | 90% |
+| **Gemini 2.5 Flash** | ~$8/month | ~$1/month | 90% |
+| **GPT-4.1 Mini** | ~$20/month | ~$2/month | 90% |
 
 **💡 Pro Tip**: Enable caching and use Gemini for the best cost-to-quality ratio.
 

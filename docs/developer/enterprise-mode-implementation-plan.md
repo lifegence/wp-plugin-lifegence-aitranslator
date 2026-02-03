@@ -1060,7 +1060,7 @@ private function inject_canonical_tag($html, $lang) {
 - With 90% cache: ~$50/month
 - May need better caching or CDN integration
 
-**Recommendation: Start with Gemini 1.5 Flash for best cost/quality balance.**
+**Recommendation: Start with Gemini 2.5 Flash for best cost/quality balance.**
 
 ---
 

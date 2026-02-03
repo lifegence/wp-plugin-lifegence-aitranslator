@@ -34,7 +34,7 @@ $settings = get_option('GTranslate');
     // NEW: AI Translation Engine Settings
     'ai_engine_enabled' => true,              // Enable AI translation
     'ai_engine_provider' => 'gemini',         // 'gemini' | 'openai' | 'google' (legacy)
-    'ai_engine_model' => 'gemini-1.5-flash',  // Model selection
+    'ai_engine_model' => 'gemini-2.5-flash',  // Model selection
 
     // API Keys (encrypted)
     'gemini_api_key' => 'encrypted_key_here',
@@ -140,7 +140,7 @@ class GTranslate_API_Key_Manager {
      * Validate API key by testing connection
      */
     public function validate_gemini_key($api_key) {
-        $test_url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' . $api_key;
+        $test_url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=' . $api_key;
 
         $response = wp_remote_post($test_url, [
             'timeout' => 10,
@@ -270,18 +270,18 @@ Add a new tab to the existing GTranslate settings page:
                 </th>
                 <td>
                     <select id="ai_engine_model_gemini" name="ai_engine_model_gemini" style="width:300px;">
-                        <option value="gemini-1.5-flash" <?php selected($data['ai_engine_model'], 'gemini-1.5-flash'); ?>>
-                            Gemini 1.5 Flash (Fast, Cost-effective) ⭐
+                        <option value="gemini-2.5-flash" <?php selected($data['ai_engine_model'], 'gemini-2.5-flash'); ?>>
+                            Gemini 2.5 Flash (Best value) ⭐
                         </option>
-                        <option value="gemini-1.5-pro" <?php selected($data['ai_engine_model'], 'gemini-1.5-pro'); ?>>
-                            Gemini 1.5 Pro (Higher quality, Higher cost)
+                        <option value="gemini-2.5-pro" <?php selected($data['ai_engine_model'], 'gemini-2.5-pro'); ?>>
+                            Gemini 2.5 Pro (Advanced reasoning)
                         </option>
-                        <option value="gemini-2.0-flash" <?php selected($data['ai_engine_model'], 'gemini-2.0-flash'); ?>>
-                            Gemini 2.0 Flash (Latest, Experimental)
+                        <option value="gemini-2.5-flash-lite" <?php selected($data['ai_engine_model'], 'gemini-2.5-flash-lite'); ?>>
+                            Gemini 2.5 Flash-Lite (Ultra fast & low cost)
                         </option>
                     </select>
                     <p class="description">
-                        <?php _e('Gemini 1.5 Flash is recommended for most use cases (Free tier: 15 requests/min).', 'gtranslate'); ?>
+                        <?php _e('Gemini 2.5 Flash is recommended for most use cases (Free tier: 15 requests/min).', 'gtranslate'); ?>
                     </p>
                 </td>
             </tr>
@@ -295,18 +295,18 @@ Add a new tab to the existing GTranslate settings page:
                 </th>
                 <td>
                     <select id="ai_engine_model_openai" name="ai_engine_model_openai" style="width:300px;">
+                        <option value="gpt-4.1-mini" <?php selected($data['ai_engine_model'], 'gpt-4.1-mini'); ?>>
+                            GPT-4.1 Mini (Recommended) ⭐
+                        </option>
+                        <option value="gpt-4.1" <?php selected($data['ai_engine_model'], 'gpt-4.1'); ?>>
+                            GPT-4.1 (Highest quality)
+                        </option>
                         <option value="gpt-4o-mini" <?php selected($data['ai_engine_model'], 'gpt-4o-mini'); ?>>
-                            GPT-4o Mini (Recommended) ⭐
-                        </option>
-                        <option value="gpt-4o" <?php selected($data['ai_engine_model'], 'gpt-4o'); ?>>
-                            GPT-4o (Highest quality, Premium cost)
-                        </option>
-                        <option value="gpt-3.5-turbo" <?php selected($data['ai_engine_model'], 'gpt-3.5-turbo'); ?>>
-                            GPT-3.5 Turbo (Budget option)
+                            GPT-4o Mini (Budget option)
                         </option>
                     </select>
                     <p class="description">
-                        <?php _e('GPT-4o Mini offers the best quality/cost balance for translation.', 'gtranslate'); ?>
+                        <?php _e('GPT-4.1 Mini offers the best quality/cost balance for translation.', 'gtranslate'); ?>
                     </p>
                 </td>
             </tr>
@@ -1157,7 +1157,7 @@ class GTranslate_Gemini_Service implements GTranslate_Translation_Service_Interf
 
         // Decrypt API key
         $this->api_key = $key_manager->decrypt_key($settings['gemini_api_key'] ?? '');
-        $this->model = $settings['ai_engine_model'] ?? 'gemini-1.5-flash';
+        $this->model = $settings['ai_engine_model'] ?? 'gemini-2.5-flash';
         $this->quality = $settings['translation_quality'] ?? 'standard';
 
         if (empty($this->api_key)) {

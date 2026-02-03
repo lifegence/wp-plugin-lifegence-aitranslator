@@ -87,8 +87,8 @@ class LIFEAI_API_Key_Manager {
      * @return array Validation result
      */
     public function validate_gemini_key($api_key) {
-        // Use Gemini 2.0 Flash model
-        $test_url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=' . $api_key;
+        // Use Gemini 2.5 Flash model
+        $test_url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=' . $api_key;
 
         $response = wp_remote_post($test_url, array(
             'timeout' => 15,

@@ -21,7 +21,7 @@ class LIFEAI_Gemini_Translation_Service extends LIFEAI_Abstract_Translation_Serv
      * @throws Exception If API key is not configured
      */
     public function __construct() {
-        parent::__construct('gemini', 'gemini-1.5-flash');
+        parent::__construct('gemini', 'gemini-2.5-flash');
     }
 
     /**

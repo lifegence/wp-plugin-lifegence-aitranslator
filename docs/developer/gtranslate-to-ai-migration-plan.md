@@ -123,7 +123,7 @@ This document outlines the plan to migrate the GTranslate WordPress plugin from 
    ```php
    class Gemini_Translate_Service implements Translation_Service_Interface {
        private $api_key;
-       private $model = 'gemini-1.5-flash'; // Fast, cost-effective
+       private $model = 'gemini-2.5-flash'; // Fast, cost-effective
 
        public function translate_text($text, $source_lang, $target_lang) {
            // Use Gemini API with structured prompt
@@ -155,7 +155,7 @@ This document outlines the plan to migrate the GTranslate WordPress plugin from 
 **Benefits:**
 - More accurate context-aware translations
 - Better handling of idioms and cultural nuances
-- Cost-effective (Gemini 1.5 Flash is free tier available)
+- Cost-effective (Gemini 2.5 Flash has free tier available)
 - Owned by Google (similar to current Google Translate)
 
 ### Phase 3: OpenAI Integration
@@ -452,31 +452,31 @@ tests/
 
 ### Gemini API
 
-**Pricing (as of 2025):**
-- Gemini 1.5 Flash: Free tier available
-- Input: $0.075 per 1M tokens (paid tier)
-- Output: $0.30 per 1M tokens (paid tier)
+**Pricing (as of 2026):**
+- Gemini 2.5 Flash: Free tier available
+- Input: $0.15 per 1M tokens (paid tier)
+- Output: $0.60 per 1M tokens (paid tier)
 
 **Example Cost (10,000 page views/month):**
 - Avg page: 2000 words ≈ 2700 tokens
 - Total tokens: 27M input + 27M output = 54M tokens
-- Cost: (27M × $0.075) + (27M × $0.30) = $2.025 + $8.10 = $10.13/month
-- **With 80% cache hit rate: $2.03/month**
+- Cost: (27M × $0.15) + (27M × $0.60) = $4.05 + $16.20 = $20.25/month
+- **With 80% cache hit rate: $4.05/month**
 
 ### OpenAI API
 
-**Pricing (as of 2025):**
-- GPT-4o-mini: $0.150 per 1M input tokens, $0.600 per 1M output tokens
-- GPT-4o: $2.50 per 1M input tokens, $10 per 1M output tokens
+**Pricing (as of 2026):**
+- GPT-4.1 Mini: $0.40 per 1M input tokens, $1.60 per 1M output tokens
+- GPT-4.1: $2.00 per 1M input tokens, $8.00 per 1M output tokens
 
-**Example Cost (10,000 page views/month, GPT-4o-mini):**
+**Example Cost (10,000 page views/month, GPT-4.1 Mini):**
 - Same calculation as Gemini
-- Cost: (27M × $0.150) + (27M × $0.600) = $4.05 + $16.20 = $20.25/month
-- **With 80% cache hit rate: $4.05/month**
+- Cost: (27M × $0.40) + (27M × $1.60) = $10.80 + $43.20 = $54.00/month
+- **With 80% cache hit rate: $10.80/month**
 
 ### Recommendation
 
-**Best Value:** Gemini 1.5 Flash
+**Best Value:** Gemini 2.5 Flash
 - Free tier for low-volume sites
 - Lower cost than OpenAI for high-volume
 - Good translation quality

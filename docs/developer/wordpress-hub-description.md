@@ -86,7 +86,7 @@ Multiple display formats:
 - **Temperature**: Control translation creativity (0.0 - 1.0)
 - **Cache Settings**: Enable/disable caching, set cache duration
 - **Rate Limiting**: Configure API request throttling
-- **Model Selection**: Choose specific AI models (GPT-4o-mini, Gemini 1.5 Flash, etc.)
+- **Model Selection**: Choose specific AI models (GPT-4.1 Mini, Gemini 2.5 Flash, etc.)
 
 ### 🎯 How to Use
 
@@ -146,7 +146,7 @@ Multiple display formats:
 
 #### Google Gemini API
 - **Free Tier**: 15 requests per minute
-- **Model**: gemini-1.5-flash (fastest, cheapest)
+- **Model**: gemini-2.5-flash (fastest, cheapest)
 - **Recommended For**: Small to medium sites
 
 #### OpenAI API

@@ -51,7 +51,7 @@ Navigate to **Settings → Lifegence AITranslator** and configure:
 
 #### Translation Engine Tab
 - **Provider**: Choose Gemini or OpenAI
-- **Model**: Select AI model (Gemini 2.5 Flash or GPT-4o Mini recommended)
+- **Model**: Select AI model (Gemini 2.5 Flash or GPT-4.1 Mini recommended)
 - **API Key**: Enter your API key and test connection
 - **Quality**: Standard (faster) or High (better quality)
 
@@ -200,7 +200,7 @@ You can add any language not in the preset list through the admin interface.
 - Without cache: ~$10/month
 - With cache: ~$1/month ✅
 
-**OpenAI GPT-4o Mini:**
+**OpenAI GPT-4.1 Mini:**
 - Without cache: ~$20/month
 - With cache: ~$2/month
 

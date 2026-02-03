@@ -21,7 +21,7 @@ class LIFEAI_OpenAI_Translation_Service extends LIFEAI_Abstract_Translation_Serv
      * @throws Exception If API key is not configured
      */
     public function __construct() {
-        parent::__construct('openai', 'gpt-4o-mini');
+        parent::__construct('openai', 'gpt-4.1-mini');
     }
 
     /**

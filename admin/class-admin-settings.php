@@ -204,7 +204,12 @@ class LIFEAI_AITranslator_Admin_Settings {
                 </th>
                 <td>
                     <select id="gemini_model" name="gemini_model" class="regular-text">
-                        <optgroup label="<?php esc_html_e('Latest Generation (2.5)', 'lifegence-aitranslator'); ?>">
+                        <optgroup label="<?php esc_html_e('Latest Generation (3.0)', 'lifegence-aitranslator'); ?>">
+                            <option value="gemini-3-flash" <?php selected($settings['model'], 'gemini-3-flash'); ?>>
+                                <?php esc_html_e('Gemini 3 Flash - Frontier intelligence', 'lifegence-aitranslator'); ?>
+                            </option>
+                        </optgroup>
+                        <optgroup label="<?php esc_html_e('Stable Generation (2.5)', 'lifegence-aitranslator'); ?>">
                             <option value="gemini-2.5-pro" <?php selected($settings['model'], 'gemini-2.5-pro'); ?>>
                                 <?php esc_html_e('Gemini 2.5 Pro - Advanced reasoning', 'lifegence-aitranslator'); ?>
                             </option>
@@ -212,15 +217,7 @@ class LIFEAI_AITranslator_Admin_Settings {
                                 <?php esc_html_e('Gemini 2.5 Flash - Best value (Recommended)', 'lifegence-aitranslator'); ?>
                             </option>
                             <option value="gemini-2.5-flash-lite" <?php selected($settings['model'], 'gemini-2.5-flash-lite'); ?>>
-                                <?php esc_html_e('Gemini 2.5 Flash-Lite - Ultra fast', 'lifegence-aitranslator'); ?>
-                            </option>
-                        </optgroup>
-                        <optgroup label="<?php esc_html_e('Previous Generation (2.0)', 'lifegence-aitranslator'); ?>">
-                            <option value="gemini-2.0-flash" <?php selected($settings['model'], 'gemini-2.0-flash'); ?>>
-                                <?php esc_html_e('Gemini 2.0 Flash - 1M context', 'lifegence-aitranslator'); ?>
-                            </option>
-                            <option value="gemini-2.0-flash-lite" <?php selected($settings['model'], 'gemini-2.0-flash-lite'); ?>>
-                                <?php esc_html_e('Gemini 2.0 Flash-Lite - Compact', 'lifegence-aitranslator'); ?>
+                                <?php esc_html_e('Gemini 2.5 Flash-Lite - Ultra fast & low cost', 'lifegence-aitranslator'); ?>
                             </option>
                         </optgroup>
                     </select>
@@ -262,14 +259,14 @@ class LIFEAI_AITranslator_Admin_Settings {
                 </th>
                 <td>
                     <select id="openai_model" name="openai_model" class="regular-text">
+                        <option value="gpt-4.1-mini" <?php selected($settings['model'], 'gpt-4.1-mini'); ?>>
+                            <?php esc_html_e('GPT-4.1 Mini (Recommended)', 'lifegence-aitranslator'); ?>
+                        </option>
+                        <option value="gpt-4.1" <?php selected($settings['model'], 'gpt-4.1'); ?>>
+                            <?php esc_html_e('GPT-4.1 (Highest Quality)', 'lifegence-aitranslator'); ?>
+                        </option>
                         <option value="gpt-4o-mini" <?php selected($settings['model'], 'gpt-4o-mini'); ?>>
-                            <?php esc_html_e('GPT-4o Mini (Recommended)', 'lifegence-aitranslator'); ?>
-                        </option>
-                        <option value="gpt-4o" <?php selected($settings['model'], 'gpt-4o'); ?>>
-                            <?php esc_html_e('GPT-4o (Highest Quality)', 'lifegence-aitranslator'); ?>
-                        </option>
-                        <option value="gpt-3.5-turbo" <?php selected($settings['model'], 'gpt-3.5-turbo'); ?>>
-                            <?php esc_html_e('GPT-3.5 Turbo (Budget)', 'lifegence-aitranslator'); ?>
+                            <?php esc_html_e('GPT-4o Mini (Budget)', 'lifegence-aitranslator'); ?>
                         </option>
                     </select>
                 </td>

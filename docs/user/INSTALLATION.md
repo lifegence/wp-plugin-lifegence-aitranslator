@@ -31,7 +31,7 @@ Developed by **Lifegence Corporation** (https://lifegence.com)
 4. Copy key (starts with `sk-...`)
 
 **Pricing:**
-- GPT-4o Mini: $0.150 per 1M input tokens
+- GPT-4.1 Mini: $0.40 per 1M input tokens
 - Requires paid account
 
 ### Step 3: Configure Plugin
@@ -154,8 +154,8 @@ With cache: 80-95% cost reduction
 
 ### 2. Choose Right Model
 - **Gemini 2.5 Flash**: Best cost/quality for most sites
-- **GPT-4o Mini**: Higher quality, 2x cost
-- **GPT-4o**: Premium quality, 10x cost (rarely needed)
+- **GPT-4.1 Mini**: Higher quality, reasonable cost
+- **GPT-4.1**: Premium quality, higher cost (rarely needed)
 
 ### 3. Cache Duration
 - 24 hours: Good for frequently updated sites
